@@ -12,10 +12,10 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div>
-     <main className="bg-gradient-to-r from-gray-200 to-gray-500 w-full min-h-screen mx-auto-grid place-items-center">
+     <main className=" w-full min-h-screen mx-auto-grid place-items-center ">
       <Swipercomponent/>
-     </main>
-<section className="max-w-7xl mx-auto px-6 py-16">
+
+      <section className="max-w-7xl mx-auto px-6 py-16">
   <h2 className="text-4xl font-bold text-center mb-8">
     What We Do
   </h2>
@@ -98,6 +98,8 @@ export default function Home() {
 
   </div>
 </section>
+     </main>
+
        
     </div>
   );
