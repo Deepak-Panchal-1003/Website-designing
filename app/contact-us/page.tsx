@@ -107,52 +107,170 @@
 //   );
 // }
 
+
 "use client";
 
+import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
+import { useEffect } from "react";
 
 export default function ContactUs() {
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+  });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [emblaApi]);
 
   return (
-    
-    
-    <div className="max-w-6xl mx-auto p-10">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          
-          {/* Slide 1 */}
-          <div className="flex-[0_0_100%] px-4">
-            <div className="bg-white shadow-lg rounded-xl p-6 text-center">
-              <h2 className="text-2xl font-bold mb-2">Card 1</h2>
-              <p className="text-gray-600">
-                This is the first card inside the carousel.
-              </p>
-            </div>
+    <div>
+      {/* Contact Form */}
+      <div className="w-screen items-center flex justify-center">
+      <section className="py-10 px-6 bg-white border-2  border-gray-500 m-10 w-[50rem]">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Contact Us
+        </h2>
+
+        <form className="max-w-2xl mx-auto space-y-6">
+          <div>
+            <label className="block mb-2 font-medium">
+              Name*
+            </label>
+
+            <input
+              type="text"
+              className="w-full border-2  border-gray-500 p-3 rounded-lg"
+            />
           </div>
 
-          {/* Slide 2 */}
-          <div className="flex-[0_0_100%] px-4">
-            <div className="bg-white shadow-lg rounded-xl p-6 text-center">
-              <h2 className="text-2xl font-bold mb-2">Card 2</h2>
-              <p className="text-gray-600">
-                This is the second card inside the carousel.
-              </p>
-            </div>
+          <div>
+            <label className="block mb-2 font-medium">
+              Email*
+            </label>
+
+            <input
+              type="email"
+              className="w-full border-2  border-gray-500 p-3 rounded-lg"
+            />
           </div>
 
-          {/* Slide 3 */}
-          <div className="flex-[0_0_100%] px-4">
-            <div className="bg-white shadow-lg rounded-xl p-6 text-center">
-              <h2 className="text-2xl font-bold mb-2">Card 3</h2>
-              <p className="text-gray-600">
-                This is the third card inside the carousel.
-              </p>
-            </div>
+          <div>
+            <label className="block mb-2 font-medium">
+              Type a Question*
+            </label>
+
+            <textarea
+              rows={5}
+              className="w-full border-2  border-gray-500 p-3 rounded-lg"
+            />
           </div>
 
-        </div>
+          <button
+            type="submit"
+            className="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-700"
+          >
+            Register
+          </button>
+        </form>
+      </section>
       </div>
+
+      {/* Auto Scrolling Carousel */}
+      <section className="py-16">
+        <h2 className="text-4xl font-bold text-center mb-10">
+          Featured News
+        </h2>
+
+        <div className="max-w-7xl mx-auto overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+
+            {/* Card 1 */}
+            <div className="flex-[0_0_33.333%] px-4">
+              <div className="h-80 bg-white rounded-xl border-2  border-gray-500 shadow-lg flex items-center justify-center text-center p-6">
+                <Link
+                  href="https://retail.economictimes.indiatimes.com/"
+                  target="_blank"
+                  className="text-black text-3xl font-bold"
+                >
+                  Retail Economic Times
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex-[0_0_33.333%] px-4">
+              <div className="h-80 bg-white rounded-xl border-2  border-gray-500 shadow-lg flex items-center justify-center text-center p-6">
+                <Link
+                  href="https://www.theweek.in/"
+                  target="_blank"
+                  className="text-black text-3xl font-bold"
+                >
+                  The Week
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex-[0_0_33.333%] px-4">
+              <div className="h-80 bg-white rounded-xl border-2  border-gray-500 shadow-lg flex items-center justify-center text-center p-6">
+                <Link
+                  href="https://timesofindia.indiatimes.com/"
+                  target="_blank"
+                  className="text-black text-3xl font-bold"
+                >
+                  Times of India
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="flex-[0_0_33.333%] px-4">
+              <div className="h-80 bg-white rounded-xl border-2  border-gray-500 shadow-lg flex items-center justify-center text-center p-6">
+                <Link
+                  href="https://retail.economictimes.indiatimes.com/"
+                  target="_blank"
+                  className="text-black text-3xl font-bold"
+                >
+                  Retail Economic Times
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 5 */}
+           <div className="flex-[0_0_33.333%] px-4">
+              <div className="h-80 bg-white rounded-xl border-2  border-gray-500 shadow-lg flex items-center justify-center text-center p-6">
+                <Link
+                  href="https://www.theweek.in/"
+                  target="_blank"
+                  className="text-black text-3xl font-bold"
+                >
+                  The Week
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex-[0_0_33.333%] px-4">
+              <div className="h-80 bg-white rounded-xl border-2  border-gray-500 shadow-lg flex items-center justify-center text-center p-6">
+                <Link
+                  href="https://timesofindia.indiatimes.com/"
+                  target="_blank"
+                  className="text-black text-3xl font-bold"
+                >
+                  Times of India
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </div>
   );
-} 
+}
