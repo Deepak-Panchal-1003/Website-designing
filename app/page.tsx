@@ -1,65 +1,105 @@
-import Image from "next/image";
+"use client";
+import {
+  FaTwitter,
+  FaLinkedin,
+  FaFacebook,
+} from "react-icons/fa";
+
+import Link from "next/link";
+import Swipercomponent from "./components/Swiper";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div>
+     <main className="bg-gradient-to-r from-gray-200 to-gray-500 w-full min-h-screen mx-auto-grid place-items-center">
+      <Swipercomponent/>
+     </main>
+<section className="max-w-7xl mx-auto px-6 py-16">
+  <h2 className="text-4xl font-bold text-center mb-8">
+    What We Do
+  </h2>
+
+  <p className="text-lg text-gray-700 text-center leading-8 mb-12">
+    Djt Corporation focuses on maintaining a strong core of people and
+    outstanding teamwork which plays a significant role in shaping the
+    destiny of our great nation. Djt Corp. has managed to deal with
+    variations on large scale and overcome challenging situations in a
+    successful way. A focused vision, innovative spirit, and enthusiastic
+    employees are the mantras behind the success of Djt Corp.
+  </p>
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    
+    {/* Card 1 */}
+    <div className="bg-white shadow-lg rounded-lg p-6 border">
+      <h3 className="text-xl font-bold mb-4">
+        DJT Retailers Pvt Ltd
+      </h3>
+      <p className="text-gray-600 mb-6">
+        To constantly evolve and shape itself to become the most customer
+        focused retailer in the world, DJT Retailers Pvt Ltd started its
+        journey in 2017 with a mission of releasing a billion dreams and
+        developing a retail ecosystem that seamlessly integrates online and
+        offline shopping experiences into customers' daily lives.
+      </p>
+      <button className="text-blue-600 font-semibold hover:text-blue-800">
+        Know More →
+      </button>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-white shadow-lg rounded-lg p-6 border">
+      <h3 className="text-xl font-bold mb-4">
+        DJT Financial Services
+      </h3>
+      <p className="text-gray-600 mb-6">
+        DJT Retailers focuses on understanding your business needs and
+        requirements. We are more than a loan provider, offering special
+        assistance and customized business loans to support your evolving
+        financial needs and help maximize profitability.
+      </p>
+      <button className="text-blue-600 font-semibold hover:text-blue-800">
+        Know More →
+      </button>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-white shadow-lg rounded-lg p-6 border">
+      <h3 className="text-xl font-bold mb-4">
+        House of Believe
+      </h3>
+      <p className="text-gray-600 mb-6">
+        At House of Believe, we believe fashion is not just about clothing
+        but about expressing ourselves, feeling confident in what we wear,
+        and embracing our unique style. Since 2021, we have developed
+        trending Gen-Z fashion collections that allow people to express
+        their individuality.
+      </p>
+      <button className="text-blue-600 font-semibold hover:text-blue-800">
+        Know More →
+      </button>
+    </div>
+
+    {/* Card 4 */}
+    <div className="bg-white shadow-lg rounded-lg p-6 border">
+      <h3 className="text-xl font-bold mb-4">
+        DJT Microfinance
+      </h3>
+      <p className="text-gray-600 mb-6">
+        DJT Microfinance, an RBI-registered NBFC-MFI, provides essential
+        microfinance services to low-income households. We are committed to
+        empowering communities through accessible microfinance solutions.
+      </p>
+      <button className="text-blue-600 font-semibold hover:text-blue-800">
+        Know More →
+      </button>
+    </div>
+
+  </div>
+</section>
+       
     </div>
   );
 }
+
